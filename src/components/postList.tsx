@@ -1,7 +1,7 @@
 import { getAllPosts } from "@/libs/getMarkdown"
 
 export default async function PostList() {
-    const posts = await getAllPosts("contents/posts");
+    const posts = getAllPosts();
 
     return (
         <div className="

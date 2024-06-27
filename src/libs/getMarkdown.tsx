@@ -10,12 +10,15 @@ import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeShiki from '@shikijs/rehype';
+import path from 'path';
 
-export const getAllPosts = async (dirPath: string) => {
-    const files = fs.readdirSync(dirPath);
+export const getAllPosts = (dirPath: string = "/contents/posts/") => {
+    const fullPath = path.join(process.cwd(), dirPath);
+    console.log(fullPath);
+    const files = fs.readdirSync(fullPath);
     return files.map(fileName => {
         const slug = fileName.replace(/\.md$/, '');
-        const content = fs.readFileSync(`${dirPath}/${fileName}`, 'utf8');
+        const content = fs.readFileSync(`${fullPath}/${fileName}`, 'utf8');
 
         const { data } = matter(content);
         return {
@@ -26,7 +29,8 @@ export const getAllPosts = async (dirPath: string) => {
 };
 
 export const getMarkdown = (filePath: string) => {
-    const contents = fs.readFileSync(filePath, 'utf8');
+    const fullPath = path.join(process.cwd(), filePath);
+    const contents = fs.readFileSync(fullPath, 'utf8');
 
     return matter(contents);
 }
