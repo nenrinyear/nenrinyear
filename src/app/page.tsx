@@ -1,3 +1,5 @@
+import LogoGithub from "@/components/logo-github";
+import LogoX from "@/components/logo-x";
 import PostList from "@/components/postList";
 import StaticRating from "@/components/rating";
 import Image from "next/image";
@@ -72,37 +74,8 @@ export default function Home() {
                     w-full
                     h-full
                 ">
-                    <a href="https://x.com/nenrin_yearring"
-                        className="
-                            text-base 
-                            hover:underline
-                            p-4
-                            ml-2
-                            mr-2
-                            h-full
-                            bg-gray-200
-                            dark:bg-gray-600
-                            rounded-lg
-                        "
-                    >
-                        X
-                    </a>
-                    <a
-                        href="https://github.com/nenrinyear"
-                        className="
-                            text-base
-                            hover:underline
-                            p-4
-                            ml-2
-                            mr-2
-                            h-full
-                            bg-gray-200
-                            dark:bg-gray-600
-                            rounded-lg
-                        "
-                    >
-                        GitHub
-                    </a>
+                    <LogoX />
+                    <LogoGithub />
                 </div>
 
                 {/* スキルリスト */}

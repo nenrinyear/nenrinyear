@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import LogoGithub from './logo-github';
+import LogoX from './logo-x';
 
 export default function Footer() {
     return (
@@ -40,38 +42,8 @@ export default function Footer() {
                     >
                         nenrin.me
                     </Link>
-                    <a href="https://x.com/nenrin_yearring" className="link-primary">
-                        <Image
-                            width={20}
-                            height={20}
-                            src="/x-logo-black.png"
-                            alt="X"
-                            className="m-2 dark:hidden"
-                        />
-                        <Image
-                            width={20}
-                            height={20}
-                            src="/x-logo-white.png"
-                            alt="X"
-                            className="m-2 hidden dark:block"
-                        />
-                    </a>
-                    <a href="https://github.com/nenrinyear" className="link-primary">
-                        <Image
-                            width={20}
-                            height={20}
-                            src="/github-mark.png"
-                            alt="GitHub"
-                            className="m-2 dark:hidden"
-                        />
-                        <Image
-                            width={20}
-                            height={20}
-                            src="/github-mark-white.png"
-                            alt="GitHub"
-                            className="m-2 hidden dark:block"
-                        />
-                    </a>
+                    <LogoX />
+                    <LogoGithub />
                 </div>
             </nav>
         </footer>

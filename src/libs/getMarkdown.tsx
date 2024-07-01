@@ -14,7 +14,6 @@ import path from 'path';
 
 export const getAllPosts = (dirPath: string = "/contents/posts/") => {
     const fullPath = path.join(process.cwd(), dirPath);
-    console.log(fullPath);
     const files = fs.readdirSync(fullPath);
     return files.map(fileName => {
         const slug = fileName.replace(/\.md$/, '');
