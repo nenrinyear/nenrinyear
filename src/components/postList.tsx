@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/libs/getMarkdown"
+import { getAllPosts } from "@/lib/getMarkdown"
 
 export default async function PostList() {
     const posts = getAllPosts();

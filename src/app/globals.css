@@ -24,3 +24,8 @@ body {
         text-wrap: balance;
     }
 }
+
+.timeline-vertical:where(.timeline-snap-icon) > li {
+    --timeline-col-start: 0.5rem;
+    --timeline-row-start: 0.5rem;
+}

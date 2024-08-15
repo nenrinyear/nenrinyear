@@ -1,4 +1,4 @@
-import { getMarkdown, markdownToReactElement } from "@/libs/getMarkdown";
+import { getMarkdown, markdownToReactElement } from "@/lib/getMarkdown";
 
 export default function PostDetail({
     params,

@@ -1,0 +1,9 @@
+github:
+  username: 'nenrinyear'
+  repository: 'nenrinyear-blog'
+
+hugo:
+  directory:
+    articles: 'content/posts'
+  url:
+    images: '/public/images'
