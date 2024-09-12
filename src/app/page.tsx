@@ -5,6 +5,7 @@ import StaticRating from "@/components/rating";
 import Image from "next/image";
 import SkillList from "./SkillList";
 import WorksList from "./Works";
+import LogoLinkedIn from "@/components/logo-linkedin";
 
 export default function Home() {
     return (
@@ -78,6 +79,7 @@ export default function Home() {
                 ">
                     <LogoX />
                     <LogoGithub />
+                    <LogoLinkedIn />
                 </div>
                 <SkillList />
                 <WorksList />
