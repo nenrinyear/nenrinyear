@@ -24,7 +24,7 @@ const Works = [
         title: "関西の某大学のバス予約システムにおける自動予約バッチ",
         date: "2024/05",
         description: "このプログラムは、毎日23:58に起動し、0時になった瞬間に予約可能なバスをスクレイピングで取得し、あらかじめ指定された時間に近いバスを予約するプログラムです。元々Python+Seleniumでスクレイピングをしていたものを高速化、軽量化するためにRustで書き直しました",
-        techStack: ["Rust", "reqest", "tokio"],
+        techStack: ["Rust", "reqwest", "tokio"],
     },
     {
         title: "映像クリエイターに関するサービス",
@@ -48,7 +48,7 @@ const Works = [
     {
         title: "高校の部活動における合奏記録共有アプリ",
         date: "2022/06",
-        description: "高校の吹奏楽部に所属していた際、合奏記録を共有するためのアプリを作成しました。バックエンドは主にプレーンなPHPと、ワードクラウド画像生成でPythonを使用して実装しました。OAuthProvicerにLINEを採用しています。",
+        description: "高校の吹奏楽部に所属していた際、合奏記録を共有するためのアプリを作成しました。バックエンドは主にプレーンなPHPと、ワードクラウド画像生成でPythonを使用して実装しました。また、LINEBot開発の将来性を見据え、OAuthProviderにLINEを採用しています。",
         techStack: ["PHP", "DB", "Python"],
     },
     {
