@@ -1,11 +1,11 @@
 import LogoGithub from "@/components/logo-github";
 import LogoX from "@/components/logo-x";
 import PostList from "@/components/postList";
-import StaticRating from "@/components/rating";
 import Image from "next/image";
 import SkillList from "./SkillList";
 import WorksList from "./Works";
 import LogoLinkedIn from "@/components/logo-linkedin";
+import Certificates from "./Certificates";
 
 export default function Home() {
     return (
@@ -82,6 +82,7 @@ export default function Home() {
                     <LogoLinkedIn />
                 </div>
                 <SkillList />
+                <Certificates />
                 <WorksList />
             </section>
             <section className="
