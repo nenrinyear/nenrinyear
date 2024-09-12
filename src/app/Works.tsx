@@ -21,6 +21,19 @@ const Works = [
         ],
     },
     {
+        title: "所属サークル新入生制作体験にてチーム制作",
+        date: "2024/06",
+        description: "所属しているサークルの新入生制作体験にて、新入生同士でチームを組み、Webアプリケーションを制作しました。私はチームリーダーとして、フロントエンドの雛形実装、制作リポジトリの管理、スケジュール管理、認証機能の実装を担当しました。",
+        techStack: ["Next.js", "Firebase", "DB"],
+        link: [
+            {
+                name: "shareable-todolist", url: "https://shareable-todo.nenrin.me/"
+            }, {
+                name: "GitHub", url: "https://github.com/nenrinyear/shareable-todolist"
+            }
+        ]
+    },
+    {
         title: "関西の某大学のバス予約システムにおける自動予約バッチ",
         date: "2024/05",
         description: "このプログラムは、毎日23:58に起動し、0時になった瞬間に予約可能なバスをスクレイピングで取得し、あらかじめ指定された時間に近いバスを予約するプログラムです。元々Python+Seleniumでスクレイピングをしていたものを高速化、軽量化するためにRustで書き直しました",
@@ -56,6 +69,12 @@ const Works = [
         date: "2022/05",
         description: "高校の吹奏楽部に所属していた際、部室に保管されているCDやDVDなどの蔵書をQRコードで管理するシステムを突貫工事で開発しました。バックエンドは主にPHPで実装しました。",
         techStack: ["PHP", "DB", "JavaScript"],
+    },
+    {
+        title: "複数チーム一括進行型人狼ゲーム進行補助アプリ",
+        date: "2019/03",
+        description: "中学の部活動で、上級生の卒業送別会があり、そこで企画立案から実装までを行いました。複数ゲームを同時進行する人狼ゲームのゲームマスター(勝敗判定、占い判定、投票管理など)を実装したアプリです。フロントエンドはjQuery、バックエンドはFirebase RealtimeDatabaseで実装しました。",
+        techStack: ["jQuery", "Firebase"],
     },
     {
         title: "災害用伝言板サイト作成",
@@ -123,7 +142,7 @@ export default function WorksList() {
                                 {work.link && Array.isArray(work.link) && (
                                     <div className="flex flex-row flex-wrap">
                                         {work.link.map((link, i) => (
-                                            <a key={i} href={link.url} className="text-blue-500 underline m-1">{link.name}</a>
+                                            <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline m-1">{link.name}</a>
                                         ))}
                                     </div>
                                 )}
