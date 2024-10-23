@@ -113,7 +113,6 @@ export default function Home() {
                     >
                         Posts
                     </a>
-                
                 </h1>
                 <PostList />
             </section>
