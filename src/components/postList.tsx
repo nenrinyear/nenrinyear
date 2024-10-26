@@ -1,7 +1,7 @@
-import { getAllPosts } from "@/lib/getMarkdown"
+import { getAllFiles } from "@/lib/getMarkdown"
 
 export default async function PostList() {
-    const posts = getAllPosts();
+    const posts = getAllFiles("/contents/posts/");
 
     return (
         <div className="

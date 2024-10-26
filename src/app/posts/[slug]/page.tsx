@@ -1,13 +1,11 @@
 import { getMarkdown, markdownToReactElement } from "@/lib/getMarkdown";
 
-export default function PostDetail({
+export default async function PostDetail({
     params,
 }: {
-    params: {
-        slug: string;
-    };
+    params: Promise<{ slug: string }>
 }) {
-    const { slug } = params;
+    const { slug } = await params;
 
     const post = getMarkdown(`/contents/posts/${slug}.md`);
     const { data, content } = post;
@@ -29,7 +27,7 @@ export default function PostDetail({
                 border-b-2
                 border-gray-300
             ">
-                {params.slug}
+                {slug}
             </h1>
             <article className="
                 w-full
