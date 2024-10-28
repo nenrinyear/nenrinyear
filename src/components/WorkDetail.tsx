@@ -2,7 +2,7 @@ import { getMarkdown, markdownToReactElement } from "@/lib/getMarkdown";
 import { Work } from "@/type/Works";
 
 export default async function WorkDetail({ work_slug }: { work_slug: string }) {
-    const work = getMarkdown(`contents/works/${work_slug}.md`);
+    const work = getMarkdown(`/public/contents/works/${work_slug}.md`);
     const { data, content } = work as unknown as{ data: Work, content: string };
     
     const contentbyJSX = content.length > 0 ? markdownToReactElement(content) : data.description;

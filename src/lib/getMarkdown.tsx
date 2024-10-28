@@ -12,7 +12,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeShiki from '@shikijs/rehype';
 import path from 'path';
 
-export const getAllFiles = (dirPath: string = "/contents/posts/") => {
+export const getAllFiles = (dirPath: string = "/public/contents/posts/") => {
     const fullPath = path.join(process.cwd(), dirPath);
     const files = fs.readdirSync(fullPath);
     return files.map(fileName => {

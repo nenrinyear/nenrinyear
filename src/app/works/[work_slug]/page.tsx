@@ -2,7 +2,7 @@ import WorkDetail from "@/components/WorkDetail";
 import { getAllFiles } from "@/lib/getMarkdown";
 
 export async function generateStaticParams() {
-    const works_file = getAllFiles("contents/works");
+    const works_file = getAllFiles("public/contents/works");
     const paths = works_file.map((work) => {
         return {
             params: {
