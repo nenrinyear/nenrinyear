@@ -5,7 +5,7 @@ export default async function WorkDetail({ work_slug }: { work_slug: string }) {
     const work = getMarkdown(`contents/works/${work_slug}.md`);
     const { data, content } = work as unknown as{ data: Work, content: string };
     
-    const contentbyJSX = content.length > 0 ? await markdownToReactElement(content) : data.description;
+    const contentbyJSX = content.length > 0 ? markdownToReactElement(content) : data.description;
     return (
         <>
             <h1 className="
