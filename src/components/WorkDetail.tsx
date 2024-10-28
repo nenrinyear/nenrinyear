@@ -5,7 +5,7 @@ export default async function WorkDetail({ work_slug }: { work_slug: string }) {
     const work = getMarkdown(`/public/contents/works/${work_slug}.md`);
     const { data, content } = work as unknown as{ data: Work, content: string };
     
-    const contentbyJSX = content.length > 0 ? markdownToReactElement(content) : data.description;
+    const contentbyJSX = markdownToReactElement(content);
     return (
         <>
             <h1 className="
@@ -42,7 +42,7 @@ export default async function WorkDetail({ work_slug }: { work_slug: string }) {
                 items-start
                 justify-between
             ">
-                {contentbyJSX}
+                {content && content.length > 0 ? contentbyJSX : data.description }
             </article>
             <div className="mt-2">
                 {data.links && data.links.map((link, i) => (
