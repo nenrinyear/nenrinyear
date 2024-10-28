@@ -105,6 +105,5 @@ export const markdownToReactElement = async (mdContent: string) => {
         } as Options)
         .process(mdContent);
 
-    console.log(returnHtml);
     return returnHtml.result;
 }
