@@ -12,19 +12,24 @@ import remarkRehype from 'remark-rehype';
 import rehypeShiki from '@shikijs/rehype';
 import path from 'path';
 
-export const getAllFiles = (dirPath: string = "/public/contents/posts/") => {
+export const getAllFiles = (dirPath: string = "/public/contents/posts") => {
     const fullPath = path.join(process.cwd(), dirPath);
-    const files = fs.readdirSync(fullPath);
-    return files.map(fileName => {
-        const slug = fileName.replace(/\.md$/, '');
-        const content = fs.readFileSync(`${fullPath}/${fileName}`, 'utf8');
-
-        const { data } = matter(content);
-        return {
-            slug,
-            frontMatter: data,
-        };
+    const files = fs.readdirSync(fullPath, {
+        withFileTypes: true,
     });
+    return files.filter(dirent => dirent.isFile())
+        .map(dirent => dirent.name)
+        .map(fileName => {
+            const slug = fileName.replace(/\.md$/, '');
+            const content = fs.readFileSync(`${fullPath}/${fileName}`, 'utf8');
+
+            const { data } = matter(content);
+            return {
+                slug,
+                frontMatter: data,
+            };
+        }
+        );
 };
 
 export const getMarkdown = (filePath: string) => {
