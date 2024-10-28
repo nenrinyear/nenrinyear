@@ -8,16 +8,15 @@ export default function Modal({ children }: { children: ReactNode }) {
     const inner = useRef<HTMLDivElement>(null);
     const router = useRouter();
 
-    const onDismiss = useCallback(() => {
+    const dismiss = () => {
         router.back();
-    }, [router]);
+    }
 
-    const onClick: MouseEventHandler = useCallback((e) => {
+    const onClick: MouseEventHandler = (e) => {
         if (e.target === overlay.current || e.target === inner.current) {
-            if (onDismiss) onDismiss();
+            dismiss();
         }
-    }, [onDismiss, overlay]);
-
+    };
 
     return (
         <>
@@ -34,12 +33,12 @@ export default function Modal({ children }: { children: ReactNode }) {
                 />
                 <div
                     ref={inner}
-                    className="relative w-full max-w-screen-md max-h-screen bg-white dark:bg-gray-800 rounded-lg shadow-lg m-4 p-4 z-50"
+                    className="relative w-full max-w-screen-md max-h-screen bg-white dark:bg-gray-800 rounded-lg shadow-lg m-4 z-50"
                     onClick={onClick}
                 >
                     <button
                         className="absolute top-4 right-4 z-50"
-                        onClick={onDismiss}
+                        onClick={dismiss}
                         title="閉じる"
                     >
                         <svg
@@ -55,7 +54,7 @@ export default function Modal({ children }: { children: ReactNode }) {
                             </g>
                         </svg>
                     </button>
-                    <div className="relative z-10 w-full max-w-screen-lg p-x-4 p-y-8">
+                    <div className="relative z-10 w-full max-w-screen-lg px-4 py-8">
                         {children}
                     </div>
                 </div>
