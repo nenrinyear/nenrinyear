@@ -25,7 +25,7 @@ export default function Modal({ children }: { children: ReactNode }) {
                 overflow: hidden;
             }
             `}</style>
-            <div className="fixed w-full top-0 left-0 h-full overflow-y-auto flex items-center justify-center z-50">
+            <div className="fixed w-full top-0 left-0 h-full flex items-center justify-center z-50">
                 <div
                     ref={overlay}
                     className="fixed w-full top-0 left-0 h-full bg-black bg-opacity-50 z-10"
@@ -54,7 +54,7 @@ export default function Modal({ children }: { children: ReactNode }) {
                             </g>
                         </svg>
                     </button>
-                    <div className="relative z-10 w-full max-w-screen-lg px-4 py-8">
+                    <div className="relative z-10 w-full max-w-screen-lg max-h-[90vh] overflow-y-auto px-4 py-8">
                         {children}
                     </div>
                 </div>

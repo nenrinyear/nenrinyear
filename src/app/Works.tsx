@@ -13,7 +13,6 @@ export default function WorksList() {
             return -1;
         }
     });
-    console.log(works_file);
     const works: Work[] = works_file.map((work) => {
         return {
             slug: work.slug,

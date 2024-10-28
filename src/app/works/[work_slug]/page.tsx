@@ -7,8 +7,8 @@ export default async function WorksPage({
 }) {
     const { work_slug } = await params;
     return (
-        <>
+        <div className="mt-8">
             <WorkDetail work_slug={work_slug} />
-        </>
+        </div>
     )
 }
