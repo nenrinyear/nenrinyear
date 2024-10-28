@@ -1,4 +1,17 @@
-import { getMarkdown, markdownToReactElement } from "@/lib/getMarkdown";
+import { getAllFiles, getMarkdown, markdownToReactElement } from "@/lib/getMarkdown";
+
+export async function generateStaticParams() {
+    const posts_file = getAllFiles("contents/posts");
+    const paths = posts_file.map((post) => {
+        return {
+            params: {
+                slug: post.slug,
+            },
+        };
+    });
+
+    return paths;
+}
 
 export default async function PostDetail({
     params,

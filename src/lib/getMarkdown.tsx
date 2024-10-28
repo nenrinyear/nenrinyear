@@ -80,8 +80,6 @@ const toReactComponent: Partial<Components> = {
 
 
 export const markdownToReactElement = async (mdContent: string) => {
-    "use client";
-
     const returnHtml = await remark()
         .use(remarkGfm)
         .use(remarkBreaks)
