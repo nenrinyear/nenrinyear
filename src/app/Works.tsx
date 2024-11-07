@@ -3,8 +3,9 @@ import { getAllFiles } from "@/lib/getMarkdown";
 import { Work } from "@/type/Works";
 
 
-export default function WorksList() {
-    const works_file = getAllFiles("public/contents/works").sort((a, b) => {
+export default async function WorksList() {
+    const _works_file = await getAllFiles("contents/works")
+    const works_file = _works_file.sort((a, b) => {
         const a_date = (new Date(a.frontMatter.date)).getTime();
         const b_date = (new Date(b.frontMatter.date)).getTime();
         if (a_date < b_date) {
@@ -15,7 +16,7 @@ export default function WorksList() {
     });
     const works: Work[] = works_file.map((work) => {
         return {
-            slug: work.slug,
+            slug: work.slug || '',
             title: work.frontMatter.title,
             date: work.frontMatter.date,
             description: work.frontMatter.description,

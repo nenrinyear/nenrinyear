@@ -1,0 +1,40 @@
+.content h1 {
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.content h1::before {
+    content: "# ";
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.content h2::before {
+    content: "## ";
+}
+
+.content h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.content h3::before {
+    content: "### ";
+}
+
+.content p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.content a {
+    color: #007bff;
+    text-decoration: none;
+}
+.content a:hover {
+    text-decoration: underline;
+}

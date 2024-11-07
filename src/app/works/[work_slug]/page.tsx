@@ -1,8 +1,9 @@
 import WorkDetail from "@/components/WorkDetail";
 import { getAllFiles } from "@/lib/getMarkdown";
+import "@/app/content.css";
 
 export async function generateStaticParams() {
-    const works_file = getAllFiles("public/contents/works");
+    const works_file = await getAllFiles("contents/works");
     const paths = works_file.map((work) => {
         return {
             params: {

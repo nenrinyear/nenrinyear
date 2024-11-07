@@ -3,6 +3,9 @@
 const nextConfig = {
     outputFileTracingIncludes: {
         "/contents/posts": [process.cwd() + '/contents/posts/**/*'],
+        "/contents/works": [process.cwd() + '/contents/works/**/*'],
+        "/public/contents/posts": [process.cwd() + '/public/contents/posts/**/*'],
+        "/public/contents/works": [process.cwd() + '/public/contents/works/**/*'],
     },
 };
 

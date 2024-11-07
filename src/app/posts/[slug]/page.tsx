@@ -1,7 +1,7 @@
-import { getAllFiles, getMarkdown, markdownToReactElement } from "@/lib/getMarkdown";
+import { getAllFiles, getMarkdown, markdownToHTML } from "@/lib/getMarkdown";
 
 export async function generateStaticParams() {
-    const posts_file = getAllFiles("public/contents/posts");
+    const posts_file = await getAllFiles("contents/posts");
     const paths = posts_file.map((post) => {
         return {
             params: {
@@ -20,9 +20,12 @@ export default async function PostDetail({
 }) {
     const { slug } = await params;
 
-    const post = getMarkdown(`/public/contents/posts/${slug}.md`);
+    const post = await getMarkdown(`contents/posts/${slug}.md`);
+    if (!post) {
+        return <div>Post not found</div>;
+    }
     const { data, content } = post;
-    const contentbyJSX = markdownToReactElement(content);
+    const html = await markdownToHTML(content);
 
     return (
         <div className="
@@ -49,7 +52,13 @@ export default async function PostDetail({
                 items-start
                 justify-between
             ">
-                {contentbyJSX}
+                {
+                    content && content.length > 0
+                        ? <div dangerouslySetInnerHTML={{
+                            __html: html
+                        }} />
+                        : data.description
+                }
             </article>
         </div>
     )
