@@ -31,6 +31,18 @@
     content: "### ";
 }
 
+@media (min-width: 768px) {
+    .content h1 {
+        font-size: 1.4rem;
+    }
+    .content h2 {
+        font-size: 1.2rem;
+    }
+    .content h3 {
+        font-size: 1rem;
+    }
+}
+
 .content p {
     font-size: 1rem;
     color: #333;

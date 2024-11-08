@@ -4,7 +4,8 @@ export default async function WorkDetail({ html, data }: { html: string, data: W
     return (
         <>
             <h1 className="
-                text-2xl
+                md:text-2xl
+                text-lg
                 font-bold
                 mb-4
                 pb-2

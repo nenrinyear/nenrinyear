@@ -23,22 +23,24 @@ export default function Timeline({
                         "flex-col",
                         "items-start",
                         "w-full",
-                        "pb-2 pl-6",
-                        "before:absolute before:top-0 before:left-2 before:w-1 before:h-full before:bg-gray-300",
-                        "after:absolute after:top-7 after:left-1 after:w-3 after:h-3 after:bg-slate-800 after:border-2 after:border-white after:rounded-full",
+                        "pb-2 md:pl-6",
+                        "before:absolute before:top-0 md:before:left-2 before:w-1 before:h-full before:bg-gray-300",
+                        "after:absolute after:top-7 md:after:left-1 after:w-3 after:h-3 after:bg-slate-800 after:border-2 after:border-white after:rounded-full",
+                        "pl-4 before:left-1 after:left-0",
                     )}
                 >
                     {isLink &&
                         <Link
                             href={path.join(linkBase, work.slug)}
                             className={clsx(
-                                "p-6",
+                                "md:p-6",
+                                "p-2",
                                 "hover:shadow-md hover:bg-gray-100 transition-all rounded-lg",
                                 "dark:hover:bg-gray-900 dark:hover:shadow-gray-900",
                             )}
                         >
                             <div className="text-sm font-bold">
-                                {work.date}
+                                {typeof work.date === "string" ? work.date : work.date.toDateString()}
                             </div>
                             <div className="text-xl font-bold">
                                 {work.title}

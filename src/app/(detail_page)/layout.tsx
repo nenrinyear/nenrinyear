@@ -8,6 +8,7 @@ export default function DetailLayout({ children }: { children: React.ReactNode }
                 w-full
                 mx-auto
                 pt-2
+                pl-4
                 text-blue-400
                 dark:text-blue-600
                 hover:underline
