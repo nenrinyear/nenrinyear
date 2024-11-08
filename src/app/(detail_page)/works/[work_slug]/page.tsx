@@ -28,8 +28,6 @@ export default async function WorksPage({
 
     const html = await markdownToHTML(content);
     return (
-        <div className="mt-8">
-            <WorkDetail html={html} data={data} />
-        </div>
+        <WorkDetail html={html} data={data} />
     )
 }
