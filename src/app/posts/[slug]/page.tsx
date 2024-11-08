@@ -27,7 +27,6 @@ export default async function PostDetail({
     }
     const { data, content } = post as { data: Post, content: string };
     const html = await markdownToHTML(content);
-    console.log(data);
 
     return (
         <div className="

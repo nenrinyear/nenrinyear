@@ -27,7 +27,6 @@ export const getAllFiles = async (dirPath: string = "contents/posts") => {
 
     const filesData = await Promise.all(
         files.map(async (file) => {
-            console.log(file.Key);
             const fileRaw = await getRawContent(file.Key ?? "");
             if (!fileRaw) {
                 return null;

@@ -26,7 +26,12 @@ export const getAllContents = async () => {
 }
 
 export const getRawContent = async (Key: string) => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_R2_STATIC_URL}/${Key}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_R2_STATIC_URL}/${Key}`, {
+        method: "GET",
+        next: {
+            revalidate: 60 * 60,
+        }
+    });
     if (!response.ok) {
         console.error(response);
         return null;
