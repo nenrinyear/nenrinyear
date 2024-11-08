@@ -1,6 +1,6 @@
 import "@/app/content.css";
 
-export default function PostLayout({ children }: { children: React.ReactNode }) {
+export default function DetailLayout({ children }: { children: React.ReactNode }) {
     return (
         <section className="content">
             {children}
