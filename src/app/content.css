@@ -1,5 +1,5 @@
 .content h1 {
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #333;
     margin-top: 1rem;
@@ -10,7 +10,7 @@
 }
 
 .content h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #333;
     margin-top: 1rem;
@@ -21,7 +21,7 @@
 }
 
 .content h3 {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #333;
     margin-top: 1rem;
@@ -33,13 +33,13 @@
 
 @media (min-width: 768px) {
     .content h1 {
-        font-size: 1.4rem;
+        font-size: 1.75rem;
     }
     .content h2 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     .content h3 {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 }
 
