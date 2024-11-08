@@ -25,7 +25,7 @@ export const getAllContents = async () => {
     return response.Contents;
 }
 
-export const getContent = async (Key: string) => {
+export const getRawContent = async (Key: string) => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_R2_STATIC_URL}/${Key}`);
     if (!response.ok) {
         console.error(response);

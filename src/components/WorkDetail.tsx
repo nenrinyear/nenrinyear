@@ -1,11 +1,6 @@
-import { getMarkdown, markdownToHTML } from "@/lib/getMarkdown";
 import { Work } from "@/type/Works";
 
-export default async function WorkDetail({ work_slug }: { work_slug: string }) {
-    const md = await getMarkdown(`contents/works/${work_slug}.md`);
-    const { data, content } = md as { data: unknown, content: string } as { data: Work, content: string };
-
-    const html = await markdownToHTML(content);
+export default async function WorkDetail({ html, data }: { html: string, data: Work }) {
     return (
         <>
             <h1 className="
@@ -42,7 +37,7 @@ export default async function WorkDetail({ work_slug }: { work_slug: string }) {
                 items-start
                 justify-between
             ">
-                {content && content.length > 0
+                {html && html.length > 0
                     ? <div dangerouslySetInnerHTML={{
                         __html: html
                     }} />

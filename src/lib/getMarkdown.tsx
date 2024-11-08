@@ -4,10 +4,10 @@ import { remark } from 'remark';
 import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
-import rehypeShiki from '@shikijs/rehype';
 import rehypeStringify from 'rehype-stringify';
 import path from 'path';
-import { getAllContents, getContent } from './r2';
+import { getAllContents, getRawContent } from './r2';
+import rehypeHighlight from 'rehype-highlight';
 
 export const getAllFiles = async (dirPath: string = "contents/posts") => {
     const fullPath = path.join(
@@ -28,7 +28,7 @@ export const getAllFiles = async (dirPath: string = "contents/posts") => {
     const filesData = await Promise.all(
         files.map(async (file) => {
             console.log(file.Key);
-            const fileRaw = await getContent(file.Key ?? "");
+            const fileRaw = await getRawContent(file.Key ?? "");
             if (!fileRaw) {
                 return null;
             }
@@ -44,7 +44,7 @@ export const getAllFiles = async (dirPath: string = "contents/posts") => {
 };
 
 export const getMarkdown = async (key: string) => {
-    const response = await getContent(key);
+    const response = await getRawContent(key);
     if (!response) {
         return null;
     }
@@ -61,13 +61,8 @@ export const markdownToHTML = async (mdContent: string) => {
         .use(remarkRehype, {
             allowDangerousHtml: true,
         })
+        .use(rehypeHighlight)
         .use(rehypeRaw)
-        .use(rehypeShiki, {
-            themes: {
-                light: 'vitesse-light',
-                dark: 'vitesse-dark',
-            },
-        })
         .use(rehypeStringify)
         .process(mdContent);
 
