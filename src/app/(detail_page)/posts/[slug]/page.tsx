@@ -49,7 +49,7 @@ export default async function PostDetail({
                 pt-1
                 pb-1
             ">
-                {`${data.date.getFullYear()}-${data.date.getMonth() + 1}-${data.date.getDate()}`}
+                {typeof data.date === "string" ? data.date : `${data.date.getFullYear()}-${data.date.getMonth() + 1}-${data.date.getDate()}`}
             </p>
             <article className="
                 w-full
