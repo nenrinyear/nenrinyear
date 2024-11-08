@@ -1,9 +1,9 @@
 import LogoGithub from "@/components/logo-github";
 import LogoX from "@/components/logo-x";
-import PostList from "@/components/postList";
+import PostList from "@/components/PostList";
 import Image from "next/image";
 import SkillList from "./SkillList";
-import WorksList from "./Works";
+import WorksList from "../components/WorkList";
 import LogoLinkedIn from "@/components/logo-linkedin";
 import Certificates from "./Certificates";
 
