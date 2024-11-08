@@ -3,7 +3,7 @@ import { z } from "zod";
 const PostSchema = z.object({
     slug: z.string(),
     title: z.string(),
-    date: z.string().date(),
+    date: z.date(),
     description: z.string(),
     tags: z.array(z.string()).optional(),
     links: z.array(z.object({
