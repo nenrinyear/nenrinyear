@@ -1,6 +1,8 @@
 .content h1 {
     font-size: 1.75rem;
+    font-weight: bold;
     color: #333;
+    margin-top: .5rem;
     margin-bottom: 1rem;
 }
 .content h1::before {
@@ -9,7 +11,9 @@
 
 .content h2 {
     font-size: 1.5rem;
+    font-weight: bold;
     color: #333;
+    margin-top: .5rem;
     margin-bottom: 1rem;
 }
 .content h2::before {
@@ -18,7 +22,9 @@
 
 .content h3 {
     font-size: 1.25rem;
+    font-weight: bold;
     color: #333;
+    margin-top: .5rem;
     margin-bottom: 1rem;
 }
 .content h3::before {
@@ -28,7 +34,7 @@
 .content p {
     font-size: 1rem;
     color: #333;
-    margin-bottom: 1rem;
+    margin: .5rem 0;
 }
 
 .content a {
@@ -37,4 +43,17 @@
 }
 .content a:hover {
     text-decoration: underline;
+}
+
+.content ul {
+    list-style-type: disc;
+    margin: .25rem 0;
+    padding-left: 1.5rem;
+}
+.content ul li {
+    margin: .25rem 0;
+}
+.content ul > li > ul {
+    list-style-type: circle;
+    margin: 0;
 }

@@ -1,7 +1,18 @@
 import { getAllFiles } from "@/lib/getMarkdown"
+import Link from "next/link";
 
 export default async function PostList() {
-    const posts = await getAllFiles("contents/posts");
+    const posts = (await getAllFiles("contents/posts"))
+        .sort((a, b) => {
+            const a_date = (new Date(a.frontMatter.date)).getTime();
+            const b_date = (new Date(b.frontMatter.date)).getTime();
+            if (a_date < b_date) {
+                return 1;
+            } else {
+                return -1;
+            }
+        }
+    );
 
     return (
         <div className="
@@ -11,25 +22,18 @@ export default async function PostList() {
             items-start
             justify-between
         ">
-            <ul className="w-full h-full">
+            <ul className="w-full h-full list-disc pl-4">
                 {posts.map((post) => (
                     <li
                         key={post.slug}
                         className="
-                            flex
-                            bg-gray-100
-                            dark:bg-gray-800
                             rounded-lg
-                            hover:shadow-lg
-                            transition-shadow
-                            duration-100
-                            pt-2
-                            pb-2
+                            my-4
                         "
                     >
-                        <a href={`/posts/${post.slug}`} className="w-full h-full p-4">
+                        <Link href={`/posts/${post.slug}`} className="w-full h-full hover:underline">
                             {post.frontMatter.title ?? post.slug}
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>

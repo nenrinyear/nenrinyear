@@ -1,4 +1,5 @@
 import { getAllFiles, getMarkdown, markdownToHTML } from "@/lib/getMarkdown";
+import { Post } from "@/type/Posts";
 
 export async function generateStaticParams() {
     const posts_file = await getAllFiles("contents/posts");
@@ -24,8 +25,9 @@ export default async function PostDetail({
     if (!post) {
         return <div>Post not found</div>;
     }
-    const { data, content } = post;
+    const { data, content } = post as { data: Post, content: string };
     const html = await markdownToHTML(content);
+    console.log(data);
 
     return (
         <div className="
@@ -43,8 +45,15 @@ export default async function PostDetail({
                 border-b-2
                 border-gray-300
             ">
-                {slug}
+                {data.title ?? slug}
             </h1>
+            <p className="
+                text-base
+                pt-1
+                pb-1
+            ">
+                {`${data.date.getFullYear()}-${data.date.getMonth() + 1}-${data.date.getDate()}`}
+            </p>
             <article className="
                 w-full
                 flex
