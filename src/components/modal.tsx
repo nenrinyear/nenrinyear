@@ -33,7 +33,7 @@ export default function Modal({ children }: { children: ReactNode }) {
                 />
                 <div
                     ref={inner}
-                    className="relative w-full max-w-screen-md max-h-screen bg-white dark:bg-gray-800 rounded-lg shadow-lg m-4 z-50"
+                    className="relative w-full max-w-screen-md max-h-screen bg-white dark:bg-black rounded-lg shadow-lg m-4 z-50"
                     onClick={onClick}
                 >
                     <button
