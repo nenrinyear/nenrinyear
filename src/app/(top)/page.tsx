@@ -1,11 +1,11 @@
 import LogoGithub from "@/components/logo-github";
 import LogoX from "@/components/logo-x";
-import PostList from "@/components/PostsList";
-import Image from "next/image";
-import SkillList from "./SkillList";
-import WorksList from "../components/WorksList";
 import LogoLinkedIn from "@/components/logo-linkedin";
+import PostList from "./PostsList";
+import SkillList from "./SkillList";
+import WorksList from "./WorksList";
 import Certificates from "./Certificates";
+import Image from "next/image";
 
 export default function Home() {
     return (
