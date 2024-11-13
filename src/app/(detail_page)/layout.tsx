@@ -1,4 +1,5 @@
 import "@/app/content.css";
+import "highlight.js/styles/atom-one-dark.min.css";
 import Link from "next/link";
 
 export default function DetailLayout({ children }: { children: React.ReactNode }) {
