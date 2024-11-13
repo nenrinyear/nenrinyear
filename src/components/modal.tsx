@@ -46,7 +46,7 @@ export default function Modal({ children }: { children: ReactNode }) {
                             id="_x32_"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 512 512"
-                            className="w-6 h-6"
+                            className="w-4 h-4"
                         >
                             <g>
                                 <polygon fill="#4b4b4b" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 

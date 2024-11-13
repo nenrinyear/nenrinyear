@@ -55,6 +55,8 @@ export const getMarkdown = async (key: string) => {
             data.date = _date_string.slice(0, _date_string.indexOf("T"));
         }
     }
+    const slug = key.split("/").pop()?.replace(".md", "");
+    data.slug = slug;
     return { content, data };
 }
 

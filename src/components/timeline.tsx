@@ -31,7 +31,7 @@ export default function Timeline({
                 >
                     {isLink &&
                         <Link
-                            href={path.join(linkBase, work.slug)}
+                            href={path.join(linkBase, work.slug ?? "")}
                             className={clsx(
                                 "md:p-6",
                                 "p-2",
@@ -40,7 +40,7 @@ export default function Timeline({
                             )}
                         >
                             <div className="text-sm font-bold">
-                                {typeof work.date === "string" ? work.date : work.date.toDateString()}
+                                {work.date}
                             </div>
                             <div className="text-xl font-bold">
                                 {work.title}
@@ -52,14 +52,15 @@ export default function Timeline({
                                 {work.tags && work.tags.map((tag, i) => (
                                     <span
                                         key={i}
-                                        className={clsx(
-                                            "text-xs",
-                                            "bg-gray-200 dark:bg-gray-800",
-                                            "rounded-full",
-                                            "px-2 py-1 m-1",
-                                        )}
+                                        className="
+                                            text-xs
+                                            border
+                                            border-gray-600
+                                            rounded-full
+                                            px-2 py-1 m-1
+                                        "
                                     >
-                                        {tag}
+                                        #{tag}
                                     </span>
                                 ))}
                             </div>

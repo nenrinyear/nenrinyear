@@ -78,3 +78,9 @@
     list-style-type: lower-alpha;
     margin: 0;
 }
+
+.content :not(pre) > code {
+    background-color: #e5e5e5;
+    border-radius: .375rem;
+    padding: .125rem .5rem;
+}

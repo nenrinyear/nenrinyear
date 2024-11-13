@@ -14,23 +14,54 @@ export default async function WorkDetail({ html, data }: { html: string, data: W
             ">
                 {data.title}
             </h1>
-            <p className="text-sm font-bold">
-                {data.date}
-            </p>
-            <div className="mt-2">
-                {data.tags && data.tags.map((tag, i) => (
-                    <span key={i} className="
-                        text-xs
-                        bg-gray-200
-                        dark:bg-gray-800
-                        rounded-full
-                        px-2
-                        py-1
-                        m-1
-                    ">
-                        {tag}
+            <div className="
+                flex
+                flex-row
+                items-center
+                justify-between
+            ">
+                <div className="
+                    flex
+                    flex-row
+                    items-center
+                    justify-start
+                ">
+                    <span className="text-sm font-bold">
+                        {data.date}
                     </span>
-                ))}
+                    <div className="
+                        flex
+                        flex-row
+                        ml-4
+                    ">
+                        {data.tags && data.tags.map((tag, i) => (
+                            <span key={i} className="
+                                text-xs
+                                border
+                                border-gray-600
+                                rounded-full
+                                px-2
+                                py-1
+                                m-1
+                            ">
+                                #{tag}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+                <a 
+                    href={`https://static.publish.nenrin.me/contents/works/${data.slug}.md`}
+                    target="_blank"
+                    className="
+                        text-blue-600
+                        dark:text-blue-400
+                        text-base
+                        hover:underline
+                    "
+                    rel="noopener noreferrer"
+                >
+                    {data.slug}.md
+                </a>
             </div>
             <article className="
                 w-full

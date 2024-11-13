@@ -65,13 +65,55 @@ export default async function PostDetail({
             ">
                 {safeparsed_data.title ?? slug}
             </h1>
-            <p className="
-                text-base
-                pt-1
-                pb-1
+            <div className="
+                flex
+                flex-row
+                items-center
+                justify-between
             ">
-                {safeparsed_data.date}
-            </p>
+                <div className="
+                    flex
+                    flex-row
+                    items-center
+                    justify-start
+                ">
+                    <span className="
+                        text-base
+                        font-bold
+                        pt-1
+                        pb-1
+                    ">
+                        {safeparsed_data.date}
+                    </span>
+                    <div className="
+                        flex
+                        flex-row
+                        ml-4
+                    ">
+                        {safeparsed_data.tags && safeparsed_data.tags.map((tag, i) => (
+                            <span key={i} className="
+                                text-xs
+                                border
+                                border-gray-600
+                                rounded-full
+                                px-2
+                                py-1
+                                m-1
+                            ">
+                                #{tag}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+                <a
+                    href={`https://static.publish.nenrin.me/contents/posts/${slug}.md`}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title={`source: ${slug}.md`}
+                >
+                    {slug}.md
+                </a>
+            </div>
             <article className="
                 w-full
                 flex
