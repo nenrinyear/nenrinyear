@@ -15,7 +15,7 @@ export default async function WorkDetail({ html, data }: { html: string, data: W
                 {data.title}
             </h1>
             <p className="text-sm font-bold">
-            {typeof data.date === "string" ? data.date : `${data.date.getFullYear()}-${data.date.getMonth() + 1}-${data.date.getDate()}`}
+                {data.date}
             </p>
             <div className="mt-2">
                 {data.tags && data.tags.map((tag, i) => (

@@ -49,6 +49,12 @@ export const getMarkdown = async (key: string) => {
     }
 
     const { content, data } = matter(response);
+    if ("date" in data) {
+        if (typeof data.date === "object") {
+            const _date_string = data.date.toISOString();
+            data.date = _date_string.slice(0, _date_string.indexOf("T"));
+        }
+    }
     return { content, data };
 }
 

@@ -1,5 +1,5 @@
 import { getAllFiles, getMarkdown, markdownToHTML } from "@/lib/getMarkdown";
-import { Post } from "@/type/Posts";
+import { Post, PostSchema } from "@/type/Posts";
 
 export async function generateStaticParams() {
     const posts_file = await getAllFiles("contents/posts");
@@ -28,6 +28,27 @@ export default async function PostDetail({
     const { data, content } = post as { data: Post, content: string };
     const html = await markdownToHTML(content);
 
+    const _safeparsed_data = PostSchema.safeParse(data);
+    if (_safeparsed_data.success === false) {
+        const errors = _safeparsed_data.error.flatten().fieldErrors;
+        console.error(errors);
+        return (
+            <div style={{ overflow: "auto" }}>
+                <h1>Error</h1>
+                <pre>
+                    <code>
+                        {JSON.stringify({
+                            errors,
+                            data,
+                            html,
+                        }, null, 2)}
+                    </code>
+                </pre>
+            </div>
+        )
+    }
+    const safeparsed_data = _safeparsed_data.data;
+
     return (
         <div className="
             w-full
@@ -42,14 +63,14 @@ export default async function PostDetail({
                 border-b-2
                 border-gray-300
             ">
-                {data.title ?? slug}
+                {safeparsed_data.title ?? slug}
             </h1>
             <p className="
                 text-base
                 pt-1
                 pb-1
             ">
-                {typeof data.date === "string" ? data.date : `${data.date.getFullYear()}-${data.date.getMonth() + 1}-${data.date.getDate()}`}
+                {safeparsed_data.date}
             </p>
             <article className="
                 w-full
@@ -63,7 +84,7 @@ export default async function PostDetail({
                         ? <div dangerouslySetInnerHTML={{
                             __html: html
                         }} />
-                        : data.description
+                        : safeparsed_data.description
                 }
             </article>
         </div>

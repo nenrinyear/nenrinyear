@@ -1,9 +1,9 @@
 import { z } from "zod";
 
 const WorkSchema = z.object({
-    slug: z.string(),
+    slug: z.string().optional(),
     title: z.string(),
-    date: z.union([z.string().date(), z.date()]),
+    date: z.string(),
     description: z.string(),
     tags: z.array(z.string()).optional(),
     links: z.array(z.object({
