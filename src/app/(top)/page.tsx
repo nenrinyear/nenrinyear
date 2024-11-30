@@ -73,6 +73,7 @@ export default function Home() {
                     flex-row
                     justify-start
                     items-center
+                    flex-wrap
                     mt-4
                     w-full
                     h-full
