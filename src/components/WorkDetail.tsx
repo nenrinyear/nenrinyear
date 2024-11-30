@@ -1,6 +1,6 @@
 import { Work } from "@/type/Works";
 
-export default async function WorkDetail({ html, data }: { html: string, data: Work }) {
+export default async function WorkDetail({ html, data, ismodal = false }: { html: string, data: Work, ismodal?: boolean }) {
     return (
         <>
             <h1 className="
@@ -19,6 +19,8 @@ export default async function WorkDetail({ html, data }: { html: string, data: W
                 flex-row
                 items-center
                 justify-between
+                flex-wrap
+                mb-4
             ">
                 <div className="
                     flex
@@ -32,6 +34,7 @@ export default async function WorkDetail({ html, data }: { html: string, data: W
                     <div className="
                         flex
                         flex-row
+                        flex-wrap
                         ml-4
                     ">
                         {data.tags && data.tags.map((tag, i) => (
@@ -42,7 +45,7 @@ export default async function WorkDetail({ html, data }: { html: string, data: W
                                 rounded-full
                                 px-2
                                 py-1
-                                m-1
+                                md:m-1
                             ">
                                 #{tag}
                             </span>
