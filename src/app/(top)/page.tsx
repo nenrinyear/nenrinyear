@@ -80,6 +80,50 @@ export default function Home() {
                     <LogoX />
                     <LogoGithub />
                     <LogoLinkedIn />
+                    <a
+                        href="https://github.com/nenrinyear.keys"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        className="
+                            text-base
+                            px-4
+                            py-2
+                            rounded-md
+                            hover:bg-gray-200
+                            transition-colors
+                        "
+                    >
+                        SSH Keys
+                    </a>
+                    <a
+                        href="https://github.com/nenrinyear.gpg"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        className="
+                            text-base
+                            px-4
+                            py-2
+                            rounded-md
+                            hover:bg-gray-200
+                            transition-colors
+                        "
+                    >
+                        GPG key
+                    </a>
+                    <a
+                        href="https://github.com/nenrinyear/nenrinyear"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        className="
+                            text-base
+                            p-2
+                            rounded-md
+                            hover:bg-gray-200
+                            transition-colors
+                        "
+                    >
+                        このサイトのリポジトリ
+                    </a>
                 </div>
                 <SkillList />
                 <Certificates />
