@@ -70,12 +70,14 @@ export default async function PostDetail({
                 flex-row
                 items-center
                 justify-between
+                flex-wrap
             ">
                 <div className="
                     flex
                     flex-row
                     items-center
                     justify-start
+                    flex-wrap
                 ">
                     <span className="
                         text-base
@@ -88,7 +90,7 @@ export default async function PostDetail({
                     <div className="
                         flex
                         flex-row
-                        ml-4
+                        flex-wrap
                     ">
                         {safeparsed_data.tags && safeparsed_data.tags.map((tag, i) => (
                             <span key={i} className="
@@ -114,21 +116,22 @@ export default async function PostDetail({
                     {slug}.md
                 </a>
             </div>
-            <article className="
-                w-full
-                flex
-                flex-col
-                items-start
-                justify-between
-            ">
-                {
-                    content && content.length > 0
-                        ? <div dangerouslySetInnerHTML={{
-                            __html: html
-                        }} />
-                        : safeparsed_data.description
-                }
-            </article>
+            {content && content.length > 0
+                ? <article
+                    className="
+                        w-full
+                        pt-2
+                        flex
+                        flex-col
+                        items-start
+                        justify-between
+                    "
+                    dangerouslySetInnerHTML={{
+                        __html: html
+                    }} 
+                />
+                : safeparsed_data.description
+            }
         </div>
     )
 }

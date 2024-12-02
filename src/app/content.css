@@ -1,3 +1,8 @@
+.content {
+    word-break: break-all;
+
+}
+
 .content h1 {
     font-size: 1.4rem;
     font-weight: bold;
@@ -77,6 +82,11 @@
 .content * > li > ol {
     list-style-type: lower-alpha;
     margin: 0;
+}
+
+.content pre {
+    width: 100%;
+    overflow-x: auto;
 }
 
 .content :not(pre) > code {
