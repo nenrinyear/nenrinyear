@@ -1,3 +1,8 @@
+.content {
+    word-break: break-all;
+
+}
+
 .content h1 {
     font-size: 1.4rem;
     font-weight: bold;
@@ -79,8 +84,18 @@
     margin: 0;
 }
 
+.content pre {
+    width: 100%;
+    overflow-x: auto;
+}
+
 .content :not(pre) > code {
     background-color: #e5e5e5;
     border-radius: .375rem;
     padding: .125rem .5rem;
+}
+@media (prefers-color-scheme: dark) {
+    .content :not(pre) > code {
+        background-color: #333;
+    }
 }

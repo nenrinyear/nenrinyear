@@ -66,20 +66,19 @@ export default async function WorkDetail({ html, data, ismodal = false }: { html
                     {data.slug}.md
                 </a>
             </div>
-            <article className="
-                w-full
-                pt-2
-                flex
-                flex-col
-                items-start
-                justify-between
-            ">
-                {html && html.length > 0
-                    ? <div dangerouslySetInnerHTML={{
-                        __html: html
-                    }} />
-                    : data.description}
-            </article>
+            {html && html.length > 0
+                ? <article
+                    className="
+                        w-full
+                        pt-2
+                        flex
+                        flex-col
+                        items-start
+                        justify-between
+                    "
+                    dangerouslySetInnerHTML={{ __html: html }}
+                />
+                : data.description}
             <div className="mt-2">
                 {data.links && data.links.map((link, i) => (
                     <a
