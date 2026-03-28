@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.685.0",
+    "@aws-sdk/client-s3": "^3.1019.0",
     "clsx": "^2.1.1",
     "daisyui": "^4.12.2",
     "eslint-config-prettier": "^9.1.0",
