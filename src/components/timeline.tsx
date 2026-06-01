@@ -1,7 +1,6 @@
 import { Work } from "@/type/Works";
 import clsx from "clsx";
 import Link from "next/link";
-import path from "path";
 
 export default function Timeline({
     data,
@@ -31,7 +30,7 @@ export default function Timeline({
                 >
                     {isLink &&
                         <Link
-                            href={path.join(linkBase, work.slug ?? "")}
+                            href={`${linkBase.replace(/\/$/, "")}/${work.slug ?? ""}`}
                             className={clsx(
                                 "md:p-6",
                                 "p-2",
